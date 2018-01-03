@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HttpModule } from '@angular/http';
+
+
 import { UserService } from './user/user.service';
 
 import { AppComponent } from './app.component';
@@ -20,7 +23,8 @@ import { UserDetailsComponent } from './user/user-details/user-details.component
     UserDetailsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule
   ],
   providers: [
     UserService
