@@ -28,4 +28,8 @@ export class UserComponent implements OnInit {
   		.then(users => this.users = users);*/
   }
 
+  create(user: User) {
+    console.log(user);
+  }
+
 }

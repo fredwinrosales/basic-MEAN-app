@@ -1,5 +1,5 @@
 <h1>User main component</h1>
 
-<pre>
-	{{ users | json }}
-</pre>
+<pre>{{ users | json }}</pre>
+
+<app-user-new (createNewUserEvent)="create($event)"></app-user-new>
