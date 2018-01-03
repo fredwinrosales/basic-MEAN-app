@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { UserService } from './user/user.service';
+
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { UserNewComponent } from './user/user-new/user-new.component';
@@ -20,7 +22,9 @@ import { UserDetailsComponent } from './user/user-details/user-details.component
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
