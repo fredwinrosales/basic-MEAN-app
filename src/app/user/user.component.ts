@@ -40,4 +40,9 @@ export class UserComponent implements OnInit {
     }
   }
 
+  update(users) {
+    const i = this.users.indexOf(users.original);
+    this.users[i] = users.edited;
+  }
+
 }
