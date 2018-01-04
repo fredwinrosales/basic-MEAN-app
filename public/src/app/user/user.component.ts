@@ -38,9 +38,10 @@ export class UserComponent implements OnInit {
     }
   }
 
-  update(users: any) {
-    const i = this.users.indexOf(users.original);
-    this.users[i] = users.edited;
+  update(user: User) {
+    this._userService.update(user)
+        .then(status => this.getUsers())
+        .catch(err => console.log(err))
   }
 
 }

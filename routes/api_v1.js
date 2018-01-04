@@ -21,4 +21,17 @@ router.post('/users', (req, res) => {
 	});
 });
 
+router.put('/users/:id', (req, res) => {
+	delete req.body._id;
+	console.log(req.body);
+	User.update({_id: req.params.id}, req.body, (err, user) => {
+		if(err) {
+			res.json(err);
+		}
+		else {
+			res.json(user);
+		}
+	});
+});
+
 module.exports = router;

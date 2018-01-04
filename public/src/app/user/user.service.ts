@@ -24,7 +24,7 @@ export class UserService {
 	}
 
 	update(user: User) {
-		return this._http.put('/users' + user._id, user)
+		return this._http.put('/users/' + user._id, user)
 			.map(data => data.json()).toPromise()
 	}
 
