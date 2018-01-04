@@ -29,7 +29,7 @@ export class UserComponent implements OnInit {
   }
 
   create(user: User) {
-    console.log(user);
+    this.users.push(user);
   }
 
 }
