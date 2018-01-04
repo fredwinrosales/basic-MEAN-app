@@ -19,7 +19,7 @@ export class UserService {
 	}
 
 	destroy(user: User) {
-		return this._http.delete('/users' + user._id)
+		return this._http.delete('/users/' + user._id)
 			.map(data => data.json()).toPromise()
 	}
 

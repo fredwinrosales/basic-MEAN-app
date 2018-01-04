@@ -33,8 +33,9 @@ export class UserComponent implements OnInit {
   destroy(user: User) {
     const response = confirm("Confirm?");
     if(response) {
-      const i = this.users.indexOf(user);
-      this.users.splice(i, 1); 
+      this._userService.destroy(user)
+          .then(status => this.getUsers())
+          .catch(err => console.log(err))
     }
   }
 
