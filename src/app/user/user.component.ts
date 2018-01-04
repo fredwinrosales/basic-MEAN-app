@@ -32,4 +32,12 @@ export class UserComponent implements OnInit {
     this.users.push(user);
   }
 
+  destroy(user: User) {
+    const response = confirm("Confirm?");
+    if(response) {
+      const i = this.users.indexOf(user);
+      this.users.splice(i, 1); 
+    }
+  }
+
 }
