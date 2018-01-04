@@ -11,21 +11,17 @@ import { User } from './user';
 })
 export class UserComponent implements OnInit {
 
-	users: User[] = [
-		new User(1, 'Fredwin', 'Rosales', 'fredwinrosales@gmail.com'),
-		new User(2, 'Freddy', 'Rosales', 'freddyrosale@hotmail.com'),
-		new User(3, 'Youseli', 'Campos', 'youselicampos@gmail.com')
-	];
+	users: User[] = [];
 
   	constructor(private _userService: UserService) { }
 
   ngOnInit() {
-  	//this.getUsers();
+  	this.getUsers();
   }
 
   getUsers() {
-  	/*this._userService.getUsers()
-  		.then(users => this.users = users);*/
+  	this._userService.getUsers()
+        .then(users => this.users = users);
   }
 
   create(user: User) {
