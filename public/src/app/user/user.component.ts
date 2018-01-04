@@ -25,7 +25,9 @@ export class UserComponent implements OnInit {
   }
 
   create(user: User) {
-    this.users.push(user);
+    this._userService.create(user)
+        .then(status => this.getUsers())
+        .catch(err => console.log(err))
   }
 
   destroy(user: User) {
